@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\MainController;
+use App\Http\Controllers\Admin\CategoryController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -9,4 +11,5 @@ Route::get('/', function () {
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/', [MainController::class, 'index'])->name('index');
+    Route::resource('/categories', CategoryController::class);
 });
