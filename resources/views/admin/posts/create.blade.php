@@ -43,11 +43,17 @@
                 <div class="form-group">
                     <label for="description">Цитата</label>
                     <textarea name="description" class="form-control" id="description" rows="3" placeholder="Цитата ..."></textarea>
+                    @error('description')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
 
                 <div class="form-group">
                     <label for="content">Контент</label>
                     <textarea name="content" class="form-control" id="content" rows="5" placeholder="Контент ..."></textarea>
+                     @error('content')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
                 </div>
 
                 <div class="form-group">

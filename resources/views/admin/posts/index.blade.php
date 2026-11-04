@@ -57,7 +57,7 @@
                                     <td>{{$post->id}}</td>
                                     <td>{{$post->title}}</td>
                                     <td>{{$post->category->title}}</td>
-                                    <td>{{$post->tags}}</td>
+                                    <td>{{$post->tags->pluck("title")->join(', ')}}</td>
                                     <td>{{$post->created_at}}</td>
                                     <td>
                                         <a href="{{ route('admin.posts.edit', ['post' => $post->id]) }}"
