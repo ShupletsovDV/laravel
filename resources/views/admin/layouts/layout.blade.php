@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="{{ asset('assets/admin/plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('assets/admin/css/adminlte.min.css') }}">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{ asset('assets/admin/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/css/select2-bootstrap4.min.css') }}">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -260,6 +263,31 @@
                                
                             </ul>
                         </li>
+
+                          <li class="nav-item">
+                            <a href="{{route('admin.tags.index')}}" class="nav-link">
+                                <i class="nav-icon fas fa-edit"></i>
+                                <p>
+                                    Статьи
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('admin.posts.index')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Список статей</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('admin.posts.create')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Новая статья</p>
+                                    </a>
+                                </li>
+                               
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
@@ -312,6 +340,9 @@
 
     <!-- jQuery -->
     <script src="{{ asset('assets/admin/plugins/jquery/jquery.min.js') }}"></script>
+    <!-- Select2 -->
+    <script src="{{ asset('assets/admin/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('assets/admin/js/i18n/ru.js') }}"></script>
     <!-- Bootstrap 4 -->
     <script src="{{ asset('assets/admin/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- AdminLTE App -->
@@ -324,6 +355,11 @@
                 $(this).addClass('active');
                 $(this).closest('.nav-item').addClass('menu-open');
             }
+        });
+
+        $('.select2').select2({
+            theme: 'bootstrap4',
+            language: 'ru'
         });
     </script>
 
